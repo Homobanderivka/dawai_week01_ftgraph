@@ -46,7 +46,18 @@ if show_lib_day:
     liberation_day = pd.to_datetime("2025-04-02")
     if liberation_day >= start_date and liberation_day <= end_date:
         ax1.axvline(liberation_day, color='gray', linestyle='dotted')
-        ax1.text(liberation_day, ax1.get_ylim()[1]*0.98, 'Liberation Day', rotation=90, color='gray', fontsize=9)
+        if show_usd:
+            y_pos = ax1.get_ylim()[1] * 0.98
+            ax = ax1
+        elif show_yield:
+            y_pos = ax2.get_ylim()[1] * 0.98
+            ax = ax2
+        else:
+            y_pos = 1  # fallback value if neither is shown
+            ax = ax1
+
+    # Place the label
+    ax.text(liberation_day, y_pos, 'Liberation Day', rotation=90, color='gray', fontsize=9)
 
 # Title and layout
 fig.tight_layout()
