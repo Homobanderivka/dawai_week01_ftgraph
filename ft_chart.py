@@ -56,8 +56,8 @@ if show_lib_day:
             y_pos = 1  # fallback value if neither is shown
             ax = ax1
 
-    # Place the label
-    ax.text(liberation_day, y_pos, 'Liberation Day', rotation=90, color='gray', fontsize=9)
+        # Place the label
+        ax.text(liberation_day, y_pos, 'Liberation Day', rotation=90, color='gray', fontsize=9)
 
 # Title and layout
 fig.tight_layout()
