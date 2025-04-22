@@ -6,7 +6,7 @@ st.set_page_config(layout="centered")
 st.title("The dollar usually moves in lockstep with US yields... until ‘liberation day’")
 
 # === Load Merged Data ===
-df = pd.read_csv(r"C:\Users\Катерина\Documents\uni\data_analysis_with_ai\streamlit\assignment1\dgs10_usdindex_merged.csv")
+df = pd.read_csv("dgs10_usdindex_merged.csv")
 df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
 
